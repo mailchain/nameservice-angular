@@ -22,34 +22,18 @@ In an Angular component file, eg. `my-component.component.tx`, add the following
   ) { }
 
   // add to function and then execute logic in the callback
-  async myFunction() {
+  myFunction() {
     const protocol = "ethereum" // change accordingly or use function params
     const network = "mainnet" // change accordingly or use function params
 
-    const obs = await this.nameserviceService.resolveName(
-      protocol,
-      network,
-      value
-    )
+    const obs = this.nameserviceService.resolveName(protocol, network, value)
 
     obs.subscribe(obs => {
       console.log(obs['body']) // Expect: { address: "0x1234....", status: 0}
     })
   }
 
-  // or execute as async function
-  myFunction() {
-    const protocol = "ethereum" // change accordingly or use function params
-    const network = "mainnet" // change accordingly or use function params
-
-    this.nameserviceService.resolveName(
-      protocol,
-      network,
-      value
-    ).subscribe(obs => {
-      console.log(obs['body']) // Expect: { address: "0x1234....", status: 0}
-    })
-  }
+  
 
 ```
 
