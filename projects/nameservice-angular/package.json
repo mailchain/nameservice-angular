@@ -1,8 +1,18 @@
 {
-  "name": "nameservice-angular",
+  "name": "@mailchain/nameservice-angular",
   "version": "0.0.1",
+  "description": "Mailchain Nameservice - a service for resolving web3 names via the Mailchain API for Angular",
+  "author": "Mailchain",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mailchain/nameservice-angular.git"
+  },
   "peerDependencies": {
     "@angular/common": "^8.2.14",
     "@angular/core": "^8.2.14"
+  },
+  "dependencies": {
+    "@mailchain/http-helpers-angular": "^0.0.4"
   }
 }

@@ -3,5 +3,3 @@
  */
 
 export * from './lib/nameservice-angular.service';
-export * from './lib/nameservice-angular.component';
-export * from './lib/nameservice-angular.module';

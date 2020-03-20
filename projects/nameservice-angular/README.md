@@ -1,5 +1,50 @@
 # NameserviceAngular
 
+This package is an Angular service that helps query the Mailchain API nameservice endpoint.
+
+## Installing
+
+```sh
+npm install @mailchain/nameservice-angular --save
+```
+
+## Usage
+
+In an Angular component file, eg. `my-component.component.tx`, add the following:
+
+``` ts
+  // import the service
+  import { NameserviceService } from '@mailchain/nameserver-angular';
+
+  // add to constructor
+  constructor(
+    private nameserviceService: NameserviceService,
+  ) { }
+
+  // add to function, e.g. 
+  myFunction() {
+    const protocol = "ethereum" // change accordingly or use function params
+    const network = "mainnet" // change accordingly or use function params
+    const url = "http://127.0.0.1/messages" // change accordingly or use function params
+    const body = outboundMail
+    const httpOptions = this.httpHelpersService.getHttpOptions([
+      ['protocol', protocol],
+      ['network', network]
+    ])
+
+    return this.http.post(url, body, httpOptions);
+
+    this.nameserviceService.resolveName(
+      protocol,
+      network,
+      value
+    ).then(name => {
+      console.log( name )
+    })
+  }
+
+```
+
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.14.
 
 ## Code scaffolding
