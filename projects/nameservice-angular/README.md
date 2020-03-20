@@ -21,25 +21,33 @@ In an Angular component file, eg. `my-component.component.tx`, add the following
     private nameserviceService: NameserviceService,
   ) { }
 
-  // add to function, e.g. 
+  // add to function and then execute logic in the callback
+  async myFunction() {
+    const protocol = "ethereum" // change accordingly or use function params
+    const network = "mainnet" // change accordingly or use function params
+
+    const obs = await this.nameserviceService.resolveName(
+      protocol,
+      network,
+      value
+    )
+
+    obs.subscribe(obs => {
+      console.log(obs['body']) // Expect: { address: "0x1234....", status: 0}
+    })
+  }
+
+  // or execute as async function
   myFunction() {
     const protocol = "ethereum" // change accordingly or use function params
     const network = "mainnet" // change accordingly or use function params
-    const url = "http://127.0.0.1/messages" // change accordingly or use function params
-    const body = outboundMail
-    const httpOptions = this.httpHelpersService.getHttpOptions([
-      ['protocol', protocol],
-      ['network', network]
-    ])
-
-    return this.http.post(url, body, httpOptions);
 
     this.nameserviceService.resolveName(
       protocol,
       network,
       value
-    ).then(name => {
-      console.log( name )
+    ).subscribe(obs => {
+      console.log(obs['body']) // Expect: { address: "0x1234....", status: 0}
     })
   }
 
