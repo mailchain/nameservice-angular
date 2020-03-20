@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "nameservice-angular": [
+        "dist/nameservice-angular"
+      ],
+      "nameservice-angular/*": [
+        "dist/nameservice-angular/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

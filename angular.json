@@ -124,6 +124,41 @@
           }
         }
       }
+    },
+    "nameservice-angular": {
+      "projectType": "library",
+      "root": "projects/nameservice-angular",
+      "sourceRoot": "projects/nameservice-angular/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/nameservice-angular/tsconfig.lib.json",
+            "project": "projects/nameservice-angular/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/nameservice-angular/src/test.ts",
+            "tsConfig": "projects/nameservice-angular/tsconfig.spec.json",
+            "karmaConfig": "projects/nameservice-angular/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/nameservice-angular/tsconfig.lib.json",
+              "projects/nameservice-angular/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "nameservice-angular-app"
 }
