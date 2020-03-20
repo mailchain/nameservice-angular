@@ -1,6 +1,6 @@
 {
   "name": "@mailchain/nameservice-angular",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Mailchain Nameservice - a service for resolving web3 names via the Mailchain API for Angular",
   "author": "Mailchain",
   "license": "Apache-2.0",
