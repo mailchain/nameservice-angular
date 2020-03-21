@@ -10,7 +10,28 @@ npm install @mailchain/nameservice-angular --save
 
 ## Usage
 
-In an Angular component file, eg. `my-component.component.tx`, add the following:
+In your Angular `app.module.ts` file, import the `NameserviceAngularModule`:
+
+```ts
+
+import { NameserviceAngularModule } from '@mailchain/nameservice-angular';
+
+@NgModule({
+  declarations: [
+    AppComponent
+    ...
+  ],
+  imports: [
+    ...
+    NameserviceAngularModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
+
+In an Angular component file, eg. `my-component.component.ts`, add the following:
 
 ``` ts
   // import the service
@@ -32,8 +53,6 @@ In an Angular component file, eg. `my-component.component.tx`, add the following
       console.log(obs['body']) // Expect: { address: "0x1234....", status: 0}
     })
   }
-
-  
 
 ```
 
